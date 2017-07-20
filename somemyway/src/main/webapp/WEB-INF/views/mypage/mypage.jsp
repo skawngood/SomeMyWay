@@ -7,21 +7,17 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="/smm/resources/css/smmstyle.css">
 </head>
+<jsp:include page="../header.jsp" />
 <body>
-<div id="wrapper">
-	<div id="logo_page">
-	dd
+	<div class="content_page">
+		<div id="mypage_page">
+			<div id="mypage_profile">
+			</div>
+			<div id="mypage_id">
+				<label id="id_guide">사용자 ID</label> 
+				<label id="id_user">tempId</label>
+			</div>
+		</div>
 	</div>
-	<div id="login_page">
-		<form id="login" method="post" action="login">
-			<h1>로그인 해 주세요 :)</h1>
-			<label>User ID</label>
-			<input name="id" type="text" value="" autofocus="autofocus">
-			<label>Password</label>
-			<input name="pwd" type="password" value="">
-			<input type="submit" value="로그인" >
-		</form>
-	</div>
-</div>
 </body>
 </html>

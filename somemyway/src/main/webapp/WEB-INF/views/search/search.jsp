@@ -5,9 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/smm/resources/css/smmstyle.css">
 </head>
-<jsp:include page="logo.jsp" />
-<jsp:include page="${url}" />
+<jsp:include page="../header.jsp" />
 <body>
+	<div class="content_page">
+	</div>
 </body>
 </html>

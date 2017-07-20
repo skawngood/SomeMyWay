@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class MemberController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String front(Model model){
-		
-		model.addAttribute("url", "login.jsp");
-		
-		return "member/main";
+	public String front(){
+		return "member/login";
 	}
 }
