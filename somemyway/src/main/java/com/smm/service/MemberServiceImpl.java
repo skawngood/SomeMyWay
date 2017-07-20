@@ -39,10 +39,10 @@ public class MemberServiceImpl implements MemberService {
 		dao.regist(vo);
 	}
 
-	/*@Override
+	@Override
 	public int idcheck(String id) throws Exception {
 		logger.info("』』』』』』』 idcheck go 』』』』』』』");
-		return Mapper.idcheck(id);
-	}*/
+		return dao.idcheck(id);
+	}
 
 }

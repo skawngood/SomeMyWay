@@ -33,10 +33,9 @@ public class MemberDAOImpl implements MemberDAO {
 		sqlSession.insert(namespace + ".regist", vo);
 	}
 
-	/*@Override
+	@Override
 	public int idcheck(String id) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
-	}*/
+		return sqlSession.selectOne(namespace + ".idcheck", id);
+	}
 
 }

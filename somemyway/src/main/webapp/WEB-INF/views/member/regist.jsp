@@ -15,10 +15,29 @@
 			window.open("zipcode_page?dong="+dong,"zipcode","width=550,height=500");
 		
 	}
+	
+	function idCheck(){
+		if(document.regist.id.value == "")
+		{
+			alert("id를 입력하세요.");
+		}else{
+		document.regist.action="idcheck";
+		document.regist.submit();
+		}
+	}
+	
+<%
+	String check = (String)request.getAttribute("msg");
+	if(check != null) {
+%>
+		alert("<%=check%>");
+<%
+	}
+%>
 </script>
 </head>
 <body>
-<form:form commandName="member" action="regist" name="regist">
+<form:form commandName="memberVO" action="regist" name="regist" method="post">
 	<div id="wrapper">
 	
 		<div id="logo_page">
@@ -31,22 +50,22 @@
 		<tr>
 			<td>아이디</td>
 			<td>
-				<input type="text" name="id" >
+				<input type="text" name="id" value="${memberVO.id}" >
 				<input type="button" onclick="idCheck()" value="중복확인">
 			</td>
 		</tr>
 		<tr>
 			<td>비밀번호</td>
-			<td><input type="password" name="pass" >
+			<td><input type="password" name="pass" value="${memberVO.pass}" >
 				</td>
 		</tr>
 		<tr>
 			<td>비밀번호 확인</td>
-			<td><input type="password" name="pass_confirm"></td>
+			<td><input type="password" name="pass_confirm" value="${memberVO.pass}"></td>
 		</tr>
 		<tr>
 			<td>이름</td>
-			<td><input type="text" name="name">
+			<td><input type="text" name="name" value="${memberVO.name}">
 				</td>
 		</tr>
 		<tr>
@@ -58,39 +77,39 @@
 		</tr>
 		<tr>
 			<td>전화</td>
-			<td><input type="text" name="phone">
+			<td><input type="text" name="phone" value="${memberVO.phone}">
 			</td>	
 		</tr>
 		<tr>
 			<td>우편번호</td>
 			<td>
-				<input type="text" name="zipcode" id="user_zipcode">
+				<input type="text" name="zipcode" id="user_zipcode" value="${memberVO.zipcode}">
 				<input type="button" onclick="zipSearch()" value="검색">
 			</td>
 		</tr>
 		<tr>
 			<td>주소</td>
-			<td><input type="text" name="address1" id="user_address">
+			<td><input type="text" name="address1" id="user_address" value="${memberVO.address1}">
 				</td>
 		</tr>
 		<tr>
 			<td>상세주소</td>
-			<td><input type="text" name="address2">
+			<td><input type="text" name="address2" value="${memberVO.address2}">
 				</td>
 		</tr>
 		<tr>
 			<td>생년월일</td>
-			<td><input type="text" name="birthdate" >
+			<td><input type="text" name="birthdate" value="${memberVO.birthdate}">
 				</td>
 		</tr>
 		<tr>
 			<td>직업</td>
-			<td><input type="text" name="job" >
+			<td><input type="text" name="job" value="${memberVO.job}">
 				</td>
 		</tr>
 		<tr>
 			<td>이메일</td>
-			<td><input type="text" name="email" >
+			<td><input type="text" name="email" value="${memberVO.email}">
 				</td>
 		</tr>
 		<tr>

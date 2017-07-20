@@ -14,5 +14,5 @@ public interface MemberDAO {
 	
 	public void regist(MemberVO vo) throws Exception;
 	
-	//public int idcheck(String id) throws Exception;
+	public int idcheck(String id) throws Exception;
 }

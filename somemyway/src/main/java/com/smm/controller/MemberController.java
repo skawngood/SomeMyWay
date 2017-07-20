@@ -3,6 +3,8 @@ package com.smm.controller;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -85,5 +87,32 @@ public class MemberController {
 		logger.info("동: "+dong);
 		
 		return "member/zipcode";
+	}
+	
+	@RequestMapping("/idcheck")
+	public ModelAndView idcheck(MemberVO memberVO, HttpServletRequest request ) throws Exception{
+		ModelAndView mav = new ModelAndView();
+		
+		logger.info("idCheck - member : " + memberVO.toString());
+		
+		int a = service.idcheck(memberVO.getId());
+		
+		//String vo = request.getParameter("member");
+		
+		//logger.info(vo);
+				
+		if(a == 1) {
+			logger.info("중복");
+			request.setAttribute("msg", "아이디 중복입니다.");
+			
+		}
+		else{
+			logger.info("가능");
+			request.setAttribute("msg", "사용 가능한 아이디입니다.");
+		}
+		mav.setViewName("member/regist");
+		//mav.addObject("member", vo);
+		return mav;
+		
 	}
 }
