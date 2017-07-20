@@ -1,14 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"  %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="/smm/resources/css/smmstyle.css">
+<script type="text/javascript">
+	function zipSearch() {
+		
+			var dong = document.regist.zipcode.value;
+		
+			window.open("zipcode_page?dong="+dong,"zipcode","width=550,height=500");
+		
+	}
+</script>
 </head>
 <body>
-<form method="post" action="regist">
+<form:form commandName="member" action="regist" name="regist">
 	<div id="wrapper">
 	
 		<div id="logo_page">
@@ -42,8 +52,8 @@
 		<tr>
 			<td>성별</td>
 			<td>
-				<input type="checkbox" name="gender" value="남">남
-				<input type="checkbox" name="gender" value="여">여
+				<input type="checkbox" name="gender" value="1">남
+				<input type="checkbox" name="gender" value="2">여
 			</td>
 		</tr>
 		<tr>
@@ -70,7 +80,7 @@
 		</tr>
 		<tr>
 			<td>생년월일</td>
-			<td><input type="text" name="birthday" >
+			<td><input type="text" name="birthdate" >
 				</td>
 		</tr>
 		<tr>
@@ -92,6 +102,6 @@
 	</table>
 		</div>
 	</div>
-</form>
+</form:form>
 </body>
 </html>

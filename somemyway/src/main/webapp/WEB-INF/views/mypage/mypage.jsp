@@ -6,6 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="/smm/resources/css/smmstyle.css">
+<script type="text/javascript">
+	alert("${msg}");
+</script>
 </head>
 <jsp:include page="../header.jsp" />
 <body>

@@ -1,7 +1,5 @@
 package com.smm.domain;
 
-import java.util.Date;
-
 public class MemberVO {
 	private String id;
 	private String pass;
@@ -11,14 +9,16 @@ public class MemberVO {
 	private String zipcode;
 	private String address1;
 	private String address2;
-	private Date birthday;
+	private String birthdate;
 	private String job;
+	private String regdate;
 	private String email;
-	@Override
-	public String toString() {
-		return "MemberVO [id=" + id + ", pass=" + pass + ", name=" + name + ", gender=" + gender + ", phone=" + phone
-				+ ", zipcode=" + zipcode + ", address1=" + address1 + ", address2=" + address2 + ", birthday="
-				+ birthday + ", job=" + job + ", email=" + email + "]";
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getId() {
 		return id;
@@ -68,11 +68,11 @@ public class MemberVO {
 	public void setAddress2(String address2) {
 		this.address2 = address2;
 	}
-	public Date getBirthday() {
-		return birthday;
+	public String getBirthdate() {
+		return birthdate;
 	}
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
+	public void setBirthdate(String birthdate) {
+		this.birthdate = birthdate;
 	}
 	public String getJob() {
 		return job;
@@ -80,10 +80,21 @@ public class MemberVO {
 	public void setJob(String job) {
 		this.job = job;
 	}
-	public String getEmail() {
-		return email;
+	public String getRegdate() {
+		return regdate;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
 	}
+	@Override
+	public String toString() {
+		return "MemberVO [id=" + id + ", pass=" + pass + ", name=" + name + ", gender=" + gender + ", phone=" + phone
+				+ ", zipcode=" + zipcode + ", address1=" + address1 + ", address2=" + address2 + ", birthdate="
+				+ birthdate + ", job=" + job + ", regdate=" + regdate + ", email=" + email + "]";
+	}
+
+
+	
+	
+	
 }

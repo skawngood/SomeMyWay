@@ -1,5 +1,7 @@
 package com.smm.controller;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.slf4j.Logger;
@@ -8,12 +10,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.smm.domain.ZipcodeVO;
 import com.smm.domain.MemberVO;
 import com.smm.service.MemberService;
 
 @Controller
+@SessionAttributes({"user"})
 public class MemberController {
 
 	private static final Logger logger = LoggerFactory.getLogger(ContentController.class);
@@ -43,27 +48,42 @@ public class MemberController {
 			logger.info("결과 == " + vo.toString());
 			model.addAttribute("msg","로그인 성공!");
 			model.addAttribute("user", vo);
-			mav.setViewName("member/login");
+			mav.setViewName("mypage/mypage");
 		}
 		
 		return mav;
 	}
 	
-	/*@RequestMapping(value = "/regist", method=RequestMethod.GET)
+	@RequestMapping(value = "/regist", method=RequestMethod.GET)
 	public String regist() throws Exception{
 		return "member/regist";
-	}*/
-	/*
+	}
+	
 	@RequestMapping(value = "/regist", method = RequestMethod.POST)
 	public ModelAndView join(MemberVO vo) throws Exception{
 		ModelAndView mav = new ModelAndView();
 		
 		logger.info(vo.toString());
 		
-		memberservice.regist(vo);
+		service.regist(vo);
 		
 		mav.setViewName("member/registAction");
 		
 		return mav;
-	}*/
+	}
+	
+	@RequestMapping(value="/zipcode_page",method=RequestMethod.GET)
+	public String zipcode(){
+		return "member/zipcode";
+	}
+	
+	@RequestMapping(value="/zipcode_page",method=RequestMethod.POST)
+	public String zipcode( String dong, Model model) throws Exception{
+		List<ZipcodeVO> list=service.getZipcodeList(dong);
+		model.addAttribute("list",list);
+		
+		logger.info("동: "+dong);
+		
+		return "member/zipcode";
+	}
 }

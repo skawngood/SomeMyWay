@@ -8,6 +8,6 @@
 </head>
 <body>
 <h1>회원가입을 축하합니다.</h1>
-<a href="/">로그인</a>
+<a href="/smm">로그인</a>
 </body>
 </html>

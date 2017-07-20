@@ -19,7 +19,7 @@
 			<label>User ID</label> 
 			<input name="id" type="text"> 
 			<label>Password</label> 
-			<input name="pwd" type="password" >
+			<input name="pass" type="password" >
 			<input type="submit" value="로그인" >
 			<input type="button" value="회원가입" onclick="location='regist'">
 		</div>

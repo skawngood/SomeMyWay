@@ -10,4 +10,21 @@
 		where 	id 	= #{id}
 		and		pass = #{pass}
 	</select>
+	
+	<select id="regist" parameterType="MemberVO">
+		insert into MEMBER(
+			id, pass, name, gender, phone, zipcode,
+			address1, address2, birthdate, job, email )
+		values(
+		#{id}, #{pass}, #{name}, #{gender}, #{phone}, #{zipcode},
+		#{address1}, #{address2}, #{birthdate}, #{job}, #{email})
+	</select>
+	
+	<select id="getZipcodeList" resultType="ZipcodeVO" 	parameterType="String">
+	
+		SELECT zipcode, sido ||' '||
+		gugun ||' '|| dong ||' '||ri||' '||bunji as address1
+        from zipcode where dong like '%' || #{dong} ||'%'
+	
+	</select>
 </mapper>
