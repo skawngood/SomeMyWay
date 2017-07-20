@@ -44,11 +44,14 @@ public class MemberController {
 		MemberVO vo = service.login(param);
 		
 		if(vo == null) {
+			
 			logger.info("해당 ID 또는 비밀번호 존재하지 않음");
 			mav.setViewName("member/login_fail");
-		} else {
+		}else 
+		{
+					
 			logger.info("결과 == " + vo.toString());
-			model.addAttribute("msg","로그인 성공!");
+			model.addAttribute("msg",vo.getId()+"님 로그인 성공!");
 			model.addAttribute("user", vo);
 			mav.setViewName("mypage/mypage");
 		}
