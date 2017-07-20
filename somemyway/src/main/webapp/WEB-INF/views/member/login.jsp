@@ -8,20 +8,21 @@
 <link rel="stylesheet" type="text/css" href="/smm/resources/css/smmstyle.css">
 </head>
 <body>
-<div id="wrapper">
-	<div id="logo_page">
-	dd
-	</div>
-	<div id="login_page">
-		<form id="login" method="post" action="login">
-			<h1>로그인 해 주세요 :)</h1>
-			<label>User ID</label>
-			<input name="id" type="text" value="" autofocus="autofocus">
-			<label>Password</label>
-			<input name="pwd" type="password" value="">
+<form id="login" method="post" action="login">
+	<div id="wrapper">
+	
+		<div id="logo_page">
+		logo
+		</div>
+		
+		<div id="login_page">
+			<label>User ID</label> 
+			<input name="id" type="text"> 
+			<label>Password</label> 
+			<input name="pwd" type="password" >
 			<input type="submit" value="로그인" >
-		</form>
+			<input type="button" value="회원가입" onclick="location='regist'">
+		</div>
 	</div>
-</div>
-</body>
+</form>
 </html>

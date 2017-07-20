@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/content")
 public class ContentController {
+	
 	private static final Logger logger = LoggerFactory.getLogger(ContentController.class);
 	
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
