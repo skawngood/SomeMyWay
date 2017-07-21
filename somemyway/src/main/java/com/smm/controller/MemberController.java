@@ -3,7 +3,6 @@ package com.smm.controller;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -23,7 +22,7 @@ import com.smm.service.MemberService;
 @SessionAttributes({"user"})
 public class MemberController {
 
-	private static final Logger logger = LoggerFactory.getLogger(ContentController.class);
+	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	
 	@Inject
 	private MemberService service;

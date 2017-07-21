@@ -38,4 +38,6 @@ public class MemberDAOImpl implements MemberDAO {
 		return sqlSession.selectOne(namespace + ".idcheck", id);
 	}
 
+	
+
 }

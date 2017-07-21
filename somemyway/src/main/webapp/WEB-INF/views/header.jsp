@@ -19,6 +19,9 @@
 			<div class="menu_btn" id="search_btn">
 				<a href="/smm/content/search">회원열람</a>
 			</div>
+			<div class="menu_btn" id="board_btn">
+				<a href="/smm/board/register">썸게시판</a>
+			</div>
 		</div>
 	</div>
 </body>

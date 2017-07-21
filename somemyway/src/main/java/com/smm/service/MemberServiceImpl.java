@@ -8,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.smm.controller.ContentController;
 import com.smm.domain.MemberVO;
 import com.smm.domain.ZipcodeVO;
 import com.smm.persistence.MemberDAO;
@@ -16,7 +15,7 @@ import com.smm.persistence.MemberDAO;
 @Service
 public class MemberServiceImpl implements MemberService {
 	
-	private static final Logger logger = LoggerFactory.getLogger(ContentController.class);
+	private static final Logger logger = LoggerFactory.getLogger(MemberServiceImpl.class);
 	
 	@Inject
 	private MemberDAO dao;
